@@ -50,9 +50,14 @@ button {
     margin: 4px 2px;
     cursor: pointer;
     border-radius: 8px;
+    animation: fadeIn 1s ease-in-out;
 }
 
 ::selection {
     background-color: #ffa07a;
     color: black;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
