@@ -1,12 +1,12 @@
 
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <title>Welcome</title>
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
 </head>
 <body>
     <header>
@@ -16,7 +16,7 @@
         <p>Explore new recipes by entering your ingredients</p>
         <button onclick="findRecipe()">Find a recipe</button>
         <button onclick="login()">Log in</button>
-        <button onclick="signUp()">Sign un</button>
+        <button onclick="signUp()">Sign up</button>
 
     </main>
     <script>
@@ -29,7 +29,8 @@
         }
 
         function signUp() {
-            alert("Sign up functionality goes here!");
+            alert("123");
+            window.location.href = "{% url 'signUp' %}";
         }
     </script>
 </body>

@@ -1,0 +1,5 @@
+/* The main styles of the site */
+::selection {
+    background-color: #ffa07a;
+    color: black;
+}
