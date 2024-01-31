@@ -5,8 +5,8 @@
 <head>
     <meta charset="UTF-8">
     <title>Welcome</title>
-    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
-    <link rel="stylesheet" href="{% static 'css/homepage.css' %}">
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <link rel="stylesheet" href="{% static 'homepage.css' %}">
 </head>
 <body>
     <header>
@@ -29,9 +29,9 @@
         }
 
         function signUp() {
-            alert("123");
             window.location.href = "{% url 'signUp' %}";
         }
     </script>
+
 </body>
 </html>
