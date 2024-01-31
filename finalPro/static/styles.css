@@ -3,3 +3,22 @@
     background-color: #ffa07a;
     color: black;
 }
+
+
+@font-face {
+    font-family: 'buttonFont';
+    src: url('fonts/Dance.woff') format('woff'),
+         url('fonts/Dance.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'titlesRegular';
+    src: url('fonts/texgyretermes-regular.woff') format('woff'),
+         url('fonts/texgyretermes-regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'titlesBOLD';
+    src: url('fonts/texgyretermes-bold.woff') format('woff'),
+         url('fonts/texgyretermes-bold.woff2') format('woff2');
+}

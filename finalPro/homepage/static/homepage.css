@@ -18,6 +18,7 @@ main {
 
 h1 {
  font-size: 60px;
+ font-family: 'titlesBOLD', serif;
 
 }
 p {
@@ -25,13 +26,9 @@ p {
     margin-bottom: 30px;
     margin-top: -10px;
     font-size: 25px;
-    font-family: 'Georgia', serif;
-}
+    font-family: 'titlesRegular', serif;
 
-@font-face {
-    font-family: 'buttonFont';
-    src: url('fonts/Dance.woff') format('woff'),
-         url('fonts/Dance.woff2') format('woff2');
+
 }
 
 button {
