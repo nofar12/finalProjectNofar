@@ -4,25 +4,34 @@ body {
     align-items: center;
     justify-content: center;
     min-height: 70vh;
-    margin: 0;
+
 }
 
 .signup-form {
     width: 300px;
-    height: 200px;
     margin: 0 auto;
     padding: 80px;
     background-color: #c6d4bc;
     border-radius: 8px;
+
 }
+
+
 h1{
    font-size: 60px;
    font-family: 'titlesBOLD', serif;
 }
-.signup-form div{
-   font-size: 20px;
-   margin-bottom: 20px;
-   font-family: 'titlesRegular', serif;
+
+.form-group {
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+
+}
+.signup-form input {
+    width: 100%;
+    padding: 3px;
+    box-sizing: border-box;
 
 }
 
@@ -32,7 +41,7 @@ h1{
 
 .signup-form button {
     border-radius: 3px;
-    margin-top: 20px;
+    margin-top: 10px;
     width: 100%;
     height: 40px;
     background-color: #e2ebdd;
@@ -40,9 +49,13 @@ h1{
     border: 2px solid white;
     font-family: 'titlesBOLD', serif;
     font-size: 20px;
+    align-self: flex-end;
+    margin-top: 30px;
+
 }
 .signup-form label {
     display: block;
-    font-size: 16px;
+    font-size: 20px;
     margin-bottom: 5px;
+    margin-right: 40px;
 }
