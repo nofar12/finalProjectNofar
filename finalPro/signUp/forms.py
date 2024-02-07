@@ -3,7 +3,7 @@ from .models import User
 
 class UserRegistrationForm(forms.ModelForm):
     class Meta:
-        model = User
+        model = UserProfile
         fields = ['username', 'email', 'password']
         widgets = {
             'password': forms.PasswordInput(),
