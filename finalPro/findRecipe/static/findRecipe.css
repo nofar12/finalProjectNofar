@@ -1,0 +1,30 @@
+h1 {
+ text-align: center;
+ font-size: 50px;
+ font-family: 'titlesBOLD', serif;
+}
+p {
+    text-align: center;
+    margin-bottom: 30px;
+    margin-top: -10px;
+    font-size: 25px;
+    font-family: 'titlesRegular', serif;
+}
+
+input {
+    width: 170px;
+    height: 60px;
+    background-color: #bbd1ae;
+    border: none;
+    color: white;
+    padding: 2px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 35px;
+    font-family: 'buttonFont', serif;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 8px;
+    animation: fadeIn 1s ease-in-out;
+}
