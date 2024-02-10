@@ -12,19 +12,18 @@ p {
 }
 
 input {
-    width: 170px;
+    width: 250px;
     height: 60px;
-    background-color: #bbd1ae;
+    background-color: #e2ebdd;
     border: none;
-    color: white;
+    color: black;
     padding: 2px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    font-size: 35px;
-    font-family: 'buttonFont', serif;
-    margin: 4px 2px;
+    display: block;
+    margin: auto;
+    font-size: 20px;
+    font-family: 'titlesRegular', serif;
     cursor: pointer;
     border-radius: 8px;
-    animation: fadeIn 1s ease-in-out;
 }
