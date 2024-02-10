@@ -17,7 +17,14 @@
         <ul id="suggestionsList"></ul>
     </main>
 
+    <script src="{% static 'edamamAPI.js' %}"></script>
+
     <script>
+        searchRecipes('chicken').then(recipes => {
+            recipes.forEach(recipe => {
+                console.log(recipe.label);
+            });
+        });
         //script for the input ingredients button (auto-complete the input)
         const inputBox = document.getElementById('ingredientInput'); //reference
         const suggestionsList = document.getElementById('suggestionsList'); //reference
