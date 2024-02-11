@@ -14,57 +14,15 @@
     <main>
         <p>Enter your ingredients</p>
         <input type="text" id="ingredientInput" placeholder="Type in an ingredient...">
+        <button onclick="searchRecipes()">Find a recipe</button>
         <ul id="suggestionsList"></ul>
+        <div>
+            <table id="recipeTbl">
+        </table>
+        </div>
+
     </main>
-
     <script src="{% static 'edamamAPI.js' %}"></script>
-
-    <script>
-        searchRecipes('chicken').then(recipes => {
-            recipes.forEach(recipe => {
-                console.log(recipe.label);
-            });
-        });
-        //script for the input ingredients button (auto-complete the input)
-        const inputBox = document.getElementById('ingredientInput'); //reference
-        const suggestionsList = document.getElementById('suggestionsList'); //reference
-        const suggestions = ['Apple', 'Banana', 'Carrot', 'Lemon', 'Orange'];
-
-        function showAll() {
-            suggestions.forEach(suggestion => {
-                const li = document.createElement('li');
-                li.textContent = suggestion;
-                suggestionsList.appendChild(li);
-            });
-        }
-
-        inputBox.addEventListener('focus', function() {
-            showAll();
-        });
-
-        inputBox.addEventListener('blur', function() {
-            suggestionsList.innerHTML = '';
-        });
-
-        inputBox.addEventListener('input', function() {
-            const userInput = inputBox.value.trim();
-            if (userInput !== '') {
-                //simulated server response
-                suggestionsList.innerHTML = '';
-                 const filteredSuggestions = suggestions.filter(suggestion => suggestion.toLowerCase().startsWith(userInput.toLowerCase()));
-                 filteredSuggestions.forEach(suggestion => {
-                        const li = document.createElement('li'); //creates an html <li> element
-                        li.textContent = suggestion; // Set the text content of the list item
-                        suggestionsList.appendChild(li);
-                    });
-            }
-            else {
-                    suggestionsList.innerHTML = '';
-                    showAll()
-                }
-            });
-
-
 
     </script>
 </body>

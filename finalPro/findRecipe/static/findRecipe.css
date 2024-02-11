@@ -27,3 +27,23 @@ input {
     cursor: pointer;
     border-radius: 8px;
 }
+
+button {
+    border-radius: 3px;
+    margin-top: 10px;
+    width: 20%;
+    height: 40px;
+    background-color: #e2ebdd;
+    color: black;
+    border: 2px solid white;
+    font-family: 'titlesBOLD', serif;
+    font-size: 20px;
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+
+}
+
+button:hover {
+    background-color: #e6ebe4;
+}
