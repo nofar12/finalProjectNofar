@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Log in</title>
+    <link rel="stylesheet" href="\static\styles.css">
+    <link rel="stylesheet" href="logIn.css">
+</head>
+<body>
+    <header>
+        <h1>Log in</h1>
+    </header>
+    <form id="login-form" class="login-form" action="/submit_form_logIn" method="post">
+        <div class="form-group">
+            <label for="usernameOrEmail">Username or Email:</label>
+            <input type="text" id="usernameOrEmail" name="usernameOrEmail" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+        <button type="submit">Log in</button>
+    </form>
+    <a href="/signUp/signUp.html">Sign up</a>
+    <script>
+        document.getElementById('login-form').addEventListener("submit", function(event) {
+            event.preventDefault();  // Prevent default form submission
+
+            // Get form data
+            let formData = new FormData(document.getElementById('login-form')); //the formData object  with the form's current keys/values, and encode file input content
+            let usernameOrEmail = formData.get('usernameOrEmail');
+            let password = formData.get('password');
+
+            // Send form data to the server using Fetch API
+            fetch('/submit_form_logIn', {
+                method: 'POST',
+                body: formData
+            })
+
+            .then(response => {
+                if (response.status === 200) {
+                   window.location.href = "/userRecipeSearch/discoverRecipes.html"
+                } else if (response.status === 409) {
+                    response.text().then(errorMessage => {
+                        alert(errorMessage); // Show the error message from the server
+                    });
+                } else {
+                    alert("An error occurred. Please try again later."); // Other server errors
+                }
+            });
+        });
+    </script>
+</body>
+</html>

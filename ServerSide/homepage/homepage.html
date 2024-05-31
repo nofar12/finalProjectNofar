@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DishDive-Welcome</title>
+    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="homepage.css">
+</head>
+<body>
+    <header>
+        <img src="../static/logoSite.png" alt="logoSite">
+    </header>
+    <main>
+
+        <button onclick="signUp()">Sign up</button>
+        <button onclick="login()">Log in</button>
+
+    </main>
+    <script>
+        function login() {
+            location.href = '/logIn/logIn.html';
+        }
+
+        function signUp() {
+            location.href = '/signUp/signUp.html';
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sign up</title>
+    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="signUp.css">
+</head>
+<body>
+    <header>
+
+        <h1>Sign up</h1>
+    </header>
+    <form id="signup-form" class="signup-form" action="/submit_form_signUp" method="post">
+        <div class="form-group">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+        </div>
+        <div id="error-description"></div>
+
+        <button type="submit">Register</button>
+    </form>
+    <a href="/logIn/logIn.html">log in</a>
+
+    <script>
+        document.getElementById('signup-form').addEventListener("submit", function(event) {
+            event.preventDefault();  // Prevent default form submission
+
+            // Get form data
+            let formData = new FormData(document.getElementById('signup-form')); //the formData object  with the form's current keys/values, and encode file input content
+            let username = formData.get('username');
+            let email = formData.get('email');
+            let password = formData.get('password');
+
+            // Send form data to the server using Fetch API
+            fetch('/submit_form_signUp', {
+                method: 'POST',
+                body: formData
+            })
+
+            .then(response => {
+                if (response.status === 200) {
+                   window.location.href = "/userRecipeSearch/discoverRecipes.html"
+                } else if (response.status === 409) { // username or email already taken
+                    response.text().then(errorMessage => {
+                        alert(errorMessage); // Show the error message from the server
+                    });
+                } else {
+                    alert("An error occurred. Please try again later."); // Other server errors
+                }
+            });
+        });
+
+    </script>
+
+</body>
+</html>
+

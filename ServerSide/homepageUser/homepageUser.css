@@ -1,0 +1,83 @@
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 70vh;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+header, main, footer {
+    margin: 5px;
+}
+
+main {
+    margin-top: 2px;
+    text-align: center;
+}
+img {
+  width:500px;
+  height: auto;
+   margin-bottom: 20px;
+  animation-duration: 1s;
+  animation-name: slidein;
+}
+h2{
+    justify-content: center;
+    display: flex;
+   font-family: 'titlesRegular', serif;
+
+}
+
+button {
+    width: 170px;
+    height: 60px;
+    background-color: #beccb8;
+    border: none;
+    color: white;
+    padding: 2px;
+    text-align: center;
+    display: inline-block;
+    font-size: 25px;
+    font-family: 'titlesBOLD', serif;
+    margin: 10px;
+    cursor: pointer;
+    border-radius: 8px;
+    animation: fadeIn 1s ease-in-out;
+}
+
+
+button:hover {
+    background-color: #d9ebce;
+    transform: scale(1.2);
+    transition: transform 0.2s;
+}
+
+#accBtn{
+    font-size: 20px;
+
+}
+
+
+
+@keyframes slidein {
+            from {
+                margin-top: 100%;
+
+            }
+            to {
+                margin-top: 0%;
+
+            }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+

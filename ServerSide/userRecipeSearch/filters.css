@@ -1,0 +1,67 @@
+.filters {
+    display: none;
+    background-color: white;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	border: 1px solid #ccc;
+	width: 2000px;
+
+
+}
+
+.filters > div {
+    margin-bottom: 10px;
+
+}
+.filters h5 {
+    display: inline-block;
+    margin-right: 10px;
+}
+
+.filters input {
+    width: 40px;
+    margin-right: 10px;
+}
+.calories input , .ingr-Num input{
+    display: block;
+    margin-bottom: 5px;
+}
+
+
+#ingredientsInput {
+    width: 110px;
+    margin-right: 10px;
+    display: block;
+    margin-bottom: 5px;
+}
+
+.filters label {
+    display: flex;
+    align-items: center;
+}
+
+.filters input[type="checkbox"] {
+    order: -1;
+    background-color: #ebe5dd;
+}
+
+
+#instructionMsg {
+    display: none;
+}
+
+#ingredients {
+
+    margin-top: 10px;
+}
+
+
+#ingredients p {
+    display: inline-block;
+    min-width: 50px;
+    justify-content: space-around;
+    margin-left: 10px;
+    padding: 5px;
+    background-color: #ebe5dd;
+    border-radius: 8px;
+}

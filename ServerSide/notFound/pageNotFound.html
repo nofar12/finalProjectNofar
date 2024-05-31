@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Page not found</title>
+    <link rel="stylesheet" href="../static/styles.css">
+</head>
+<body>
+  <h1>404</h1>
+  <h2>Sorry! Page not found. Try searching something else.</h2>
+  <h3 onclick="backToHomepage()">Go back to DishDive</h3>
+  <img src="../static/logoSite.png" alt="logoSite"   onclick="backToHomepage()">
+</body>
+  <style>
+    body {
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 70vh;
+    }
+
+    img{
+      width:200px;
+      height: auto;
+    }
+    h1{
+        font-family: 'fontLogo', serif;
+        font-size:400%;
+
+    }
+    h2 {
+        font-family: 'fontLogo', serif;
+        font-size:300%;
+    }
+
+    h3 {
+        font-size:200%;
+        font-family: 'titlesRegular', serif;
+    }
+  </style>
+  <script>
+    function backToHomepage(){
+         location.href = '../homepage/homepage.html';
+    }
+
+  </script>
+</html>

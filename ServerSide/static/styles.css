@@ -1,0 +1,109 @@
+/* The main styles of the site */
+::selection {
+    background-color: #ffa07a;
+    color: black;
+}
+
+@font-face {
+    font-family: 'titlesRegular';
+    src: url('fonts/texgyretermes-regular.woff') format('woff'),
+         url('fonts/texgyretermes-regular.woff2') format('woff2');
+}
+
+@font-face {
+    font-family: 'titlesBOLD';
+    src: url('fonts/MysticalWoodsSmoothCaps.woff') format('woff'),
+         url('fonts/MysticalWoodsSmoothCaps.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'titles-script';
+    src: url('fonts/MysticalWoodsSmoothScript.woff') format('woff'),
+         url('fonts/MysticalWoodsRoughScript.woff2') format('woff2');
+}
+@font-face {
+    font-family: 'fontLogo';
+    src: url('fonts/Agbalumo.ttf') format('truetype');
+
+}
+
+.profile-group {
+    margin-left: 30px;
+    margin-top:2%;
+    cursor: pointer;
+    border-bottom: 1px solid ;
+
+}
+
+#logo{
+    width:5%;
+    top:1%;
+    right:1%;
+    position:absolute;
+    float:right;
+    cursor: pointer;
+
+}
+
+
+
+.profilePicture{
+    border-radius: 50%;
+    width:3%;
+    height: 3%;
+    vertical-align: middle;
+}
+
+.username{
+  font-size: 20px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+
+
+#shortcuts-menu{
+    display:none;
+    margin-left:5%;
+    position:fixed;
+    background:white;
+}
+#shortcuts-menu div {
+  display: flex;
+  align-items: center;
+  padding: 5px 0 5px 5px;
+  border: 1px solid black;
+  box-sizing: border-box;
+  width: 200px;
+}
+
+#shortcuts-menu div > div {
+  display: flex;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+#heart-menu {
+  width: 33px;
+  height: auto;
+  padding-right: 10px;
+}
+
+#settings-menu {
+  width: 33px;
+  height: auto;
+  padding-right: 10px;
+}
+
+#shortcuts-menu div:hover{
+   background-color: #f7f9fc;
+}
+
+#arrow-profile{
+     transform-origin: center top;
+     transition: transform 0.3s ease;
+     margin-left: auto;
+     vertical-align: middle;
+    margin-left: 10px;
+    margin-top: 12px;
+}
+

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DishDive-Welcome</title>
+    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="homepageUser.css">
+
+</head>
+<body>
+    <header>
+        <img src="../static/logoSite.png" alt="logoSite">
+        <h2>Welcome, Loading...</h2>
+    </header>
+    <main>
+
+        <button onclick="favorite()">Favorites</button>
+        <button onclick="discover()">Discover</button>
+        <button onclick="settings()" id="accBtn">Account settings</button>
+
+    </main>
+    <script>
+        function favorite() {
+            location.href = '/myFavorites/myFavorites.html';
+        }
+
+        function discover() {
+            location.href = '/userRecipeSearch/discoverRecipes.html';
+        }
+
+        function settings() {
+            location.href = '/accountSettings/accountSettings.html';
+        }
+    </script>
+
+</body>
+</html>

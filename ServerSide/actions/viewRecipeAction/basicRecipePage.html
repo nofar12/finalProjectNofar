@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$RECIPE_NAME$</title>
+	<link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="/actions/viewRecipeAction/basicRecipePage.css">
+</head>
+<body>
+	<div class="profile-group" onclick="open_close_menu()">
+		<img src="profilePicture..." alt="Profile Picture" class="profilePicture">
+		<span class="username">Loading...</span>
+		<img src="/static/arrow.png" alt="Arrow" class="arrowPicture" id="arrow-profile" >
+		<div id="profile-menu">
+			<div id="shortcuts-menu">
+				<div onclick="favorites()">
+					<img id="heart-menu" src="/static/liked.png">
+					<h3>Favorites</h3>
+				</div>
+				<div onclick="acc_settings()">
+					<img id="settings-menu" src="../../static/settings.png">
+					<h3>Account settings</h3>
+				</div>
+			</div>
+		</div>
+    </div>
+	<img src="/static/logoSite.png" alt="logo" id="logo" onclick="homepage()">
+    <h1 id="recipe-name">$RECIPE_NAME$</h1>
+	<div class="recipe-ALLdetails">
+			<div id="img-health">
+				<img id="recipe-image" src="$RECIPE_PICTURE$" alt="$RECIPE_NAME$">
+				<div id="health">
+					<div id ="nutrition-facts">
+								<div id = "nutrition-facts-basic" onclick="open_close_nutritions_facts()">
+									<h2>Nutrition facts</h2>
+									<img id="arrow-nutritions" src="../../static/arrow.png" alt="Arrow" class="arrowPicture">
+								</div>
+								<div id="nutritions-details">
+									<p class="detail"><span>Servings Per Recipe:</span> $yield$</p>
+									<p class="detail"><span>Calories:</span> $calories$</p>
+									<table class ="nutrition-facts-detailed">
+										<tr>
+											<th></th>
+											<th>% Daily Value *</th>
+										</tr>
+										<tr>
+											<td><span>Total fat:</span> $FAT$g</td>
+											<td>$FAT_percentage$%</td>
+										</tr>
+
+										<tr>
+											<td><span>Saturated fat:</span> $FASAT$g</td>
+											<td>$FASAT_percentage$%</td>
+										</tr>
+										<tr>
+											<td><span>Trans fat:</span> $FATRN$g</td>
+											<td> </td>
+										</tr>
+										<tr>
+											<td><span>Cholesterol:</span> $CHOLE$mg</td>
+											<td>$CHOLE_percentage$%</td>
+										</tr>
+										<tr>
+											<td><span>Sodium:</span> $NA$mg</td>
+											<td>$NA_percentage$%</td>
+										</tr>
+										<tr>
+											<td><span>Total Carbohydrate:</span> $CHOCDF$g</td>
+											<td>$CHOCDF_percentage$%</td>
+										</tr>
+									   <tr>
+											<td><span>Dietary Fiber:</span> $FIBTG$g</td>
+											<td>$FIBTG_percentage$%</td>
+										</tr>
+										<tr>
+											<td><span>Total Sugars:</span> $SUGAR$g</td>
+											<td> </td>
+										</tr>
+										<tr>
+											<td><span>Protein</span>: $PROCNT$g</td>
+											<td>$PROCNT_percentage$%</td>
+										</tr>
+										<tr>
+											<td><span>Vitamin D:</span> $VITD$mcg</td>
+											<td>$VITD_percentage$%</td>
+										</tr>
+										<tr>
+											<td><span>Calcium:</span> $CA$mg</td>
+											<td>$CA_percentage$%</td>
+										</tr>
+										<tr>
+											<td><span>Iron:</span> $FE$mg</td>
+											<td>$FE_percentage$%</td>
+										</tr>
+										<tr>
+											<td><span>Potassium:</span> $K$mg</td>
+											<td>$K_percentage$%</td>
+										</tr>
+									</table>
+									<p>* Percent Daily Values are based on a 2,000 calorie diet. <br>Your daily values may be higher or lower depending on your calorie needs.</p>
+								</div>
+							</div>
+							<div id="health-labels">
+								<div id="health-labels-basic" onclick="open_close_health_labels()">
+									<h2>Health labels</h2>
+									<img id="arrow-health" src="../../static/arrow.png" alt="Arrow" class="arrowPicture">
+								</div>
+								<div id="health-details">
+									<p><span>Cautions:</span> $cautions$</p>
+									<p><span>Diet:</span> $dietLabels$</p>
+									<p><span>Health labels:</span> $healthLabels$</p>
+								</div>
+							</div>
+				</div>
+
+
+			</div>
+
+
+
+			<div class="column-social">
+				<div id="likes">
+					<img id="heart" src="../../static/notLiked.png" alt="Add like" onclick="heart_clicked()">
+					<div id="likes_details">
+						<h3 id="countLikes">$likes_counter$</h3>
+						<h3>likes</h3>
+					</div>
+
+				</div>
+
+			</div>
+		<div id="details-general">
+			<div class = "recipe-details">
+				<div class="row">
+					<div>
+						<h2>Total time:</h2>
+						<h3>$totalTime$</h3>
+					</div>
+					<div>
+						<h2>Cuisine Type:</h2>
+						<h3>$cuisineType$</h3>
+					</div>
+					<div>
+						<h2>Number of ingredients:</h2>
+						<h3>$ingrNum$</h3>
+					</div>
+				</div>
+				<div class="row">
+					<div>
+						<h2>Meal Type:</h2>
+						<h3>$mealType$</h3>
+					</div>
+					<div>
+						<h2>Dish Type:</h2>
+						<h3>$dishType$</h3>
+					</div>
+					<div>
+						<h2>Servings:</h2>
+						<h3>$yield$</h3>
+					</div>
+				</div>
+			</div>
+			<div class="mainDetails" id="ingredients">
+				<h2>Ingredients</h2>
+				<h4>$ingredientLines$</h4>
+			</div>
+			<div class="mainDetails" id ="instructions">
+				<h2>Instructions</h2>
+				<h4>Get the full instructions in the link -</h4>
+				<div id="link_original">
+					<img id="link_img" src="/static/link.png" alt="link img">
+					<h3><a href=$external_link$ target="_blank">Recipe source</a></h3>
+			   </div>
+				<div class="resizable-container">
+        				<iframe src="$external_link$" class="embedded-iframe"></iframe>
+   				 </div>
+			</div>
+		</div>
+	</div>
+	<div id="reviews">
+			<div id="write-review">
+				 <input type="text" id="reviewInput" placeholder="Write a review...">
+                 <button onclick="addReview()" id="reviewButton">Send</button>
+			</div>
+		    <div id="users-reviews">
+				<h2><br>Users' reviews:</h2>
+				<div id="reviews-cardsAll">
+					$cards$
+				</div>
+			</div>
+
+	</div>
+	<input type="hidden" id="recipe_id"  value="$RECIPE_ID$" />
+	<script src="/actions/viewRecipeAction/basicRecipePage.js"></script>
+	<script src="/static/styles.js"></script>
+
+</body>
+</html>

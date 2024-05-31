@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <meta charset="UTF-8">
+    <title>Account settings</title>
+    <link rel="stylesheet" href="/static/styles.css">
+    <link rel="stylesheet" href="/accountSettings/accountSettings.css">
+     <link rel="stylesheet" href="/userRecipeSearch/discoverRecipes.css">
+</head>
+<body onload="loadMyFavorites()">
+       <div class="profile-group" onclick="open_close_menu()">
+            <img src="profilePicture..." alt="Profile Picture" class="profilePicture">
+            <span class="username">Loading...</span>
+            <img src="/static/arrow.png" id="arrow-profile" alt="Arrow" class="arrowPicture">
+            <div id="profile-menu">
+                <div id="shortcuts-menu">
+                    <div onclick="favorites()">
+                        <img id="heart-menu" src="/static/liked.png">
+                        <h3>Favorites</h3>
+                    </div>
+                    <div onclick="acc_settings()">
+                        <img id="settings-menu" src="/static/settings.png">
+                        <h3>Account settings</h3>
+                    </div>
+                </div>
+            </div>
+       </div>
+       <img src="/static/logoSite.png" alt="logo" id="logo" onclick="homepage()">
+       <h2>My favorites recipes</h2>
+
+      <table id="recipes-table"></table>
+	<script src="myFavorites.js"></script>
+    <script src="/static/styles.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,308 @@
+#recipe-name {
+    text-align: center;
+    padding-bottom: 20px;
+    font-family: 'titles-script', serif;
+}
+
+.recipe-ALLdetails {
+    display: flex;
+    flex-wrap: wrap;
+
+}
+#recipe-image{
+    width: 390px;
+    height: 380px;
+    margin-left: 3%;
+
+}
+
+.column-social {
+    display: flex;
+    flex-direction: column;
+    margin-left: 0.5%;
+}
+.column-social > div:not(#rating div)  {
+    margin-bottom: 20%;
+
+}
+#likes {
+    display: flex;
+    white-space:nowrap;
+    margin-left: 10%;
+
+
+}
+
+#likes_details{
+    display:flex;
+}
+
+
+#countLikes{
+    margin-right: 5px;
+}
+#heart {
+    width: 40px;
+    height: 40px;
+    margin-right: 4%;
+    margin-left: 2%;
+    cursor: pointer;
+}
+
+#heart:hover {
+    opacity: 0.5;
+}
+
+
+
+#link_original {
+    display: flex;
+    white-space:nowrap;
+
+}
+
+#link_img {
+  width: 50px;
+  height: 50px;
+}
+
+
+.recipe-details {
+    text-align: center;
+    max-width: 650px;
+    max-height: 280px;
+    padding: 20px;
+    margin-left: 6%;
+    background-color: #e2ebdd;
+    border-radius: 8px;
+
+}
+
+.recipe-details div {
+    padding-right: 20px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    white-space:nowrap;
+    transition: 0.3s;
+}
+.recipe-details div>div:hover {
+    color: white;
+    opacity: 1
+}
+
+.row {
+    display: flex;
+    justify-content: space-around;
+}
+
+
+.recipe-details h2,h3 {
+    font-family: 'titlesRegular', serif;
+}
+.row h2 {
+   font-weight: 800;
+}
+.row h3 {
+    font-weight: 200;
+}
+.profilePicture{
+    border-radius: 50%;
+    width:3%;
+    height: 3%;
+    vertical-align: middle;
+}
+
+.username{
+  font-size: 20px;
+  margin-left: 10px;
+  vertical-align: middle;
+}
+
+.arrowPicture{
+    vertical-align: middle;
+    margin-left: 10px;
+    margin-top: 12px;
+}
+
+.profile-group {
+    margin-left: 30px;
+    margin-top: 25px;
+    cursor: pointer;
+    border-bottom: 1px solid ;
+}
+
+
+
+#nutrition-facts , #health-labels{
+    margin-bottom: 20px;
+    transition: border 0.3s;
+    max-width: 390px;
+
+}
+
+
+#health {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 3%;
+
+
+}
+
+#nutrition-facts-basic , #health-labels-basic{
+    font-family: 'titlesBOLD', serif;
+    font-size:14px;
+    display: flex;
+    white-space: nowrap;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid black;
+}
+#nutrition-facts-basic:hover , #health-labels-basic:hover, #shortcuts-menu div:hover{
+   background-color: #f7f9fc;
+}
+
+
+#arrow-nutritions , #arrow-health{
+     transform-origin: center top;
+     transition: transform 0.3s ease;
+     margin-left: auto;
+}
+
+
+#health span {
+    font-weight:bold;
+}
+#health h2 {
+    margin-left: 5px;
+}
+.nutrition-facts-detailed  {
+    font-family: Verdana;
+    border-collapse: collapse;
+}
+.nutrition-facts-detailed td,.nutrition-facts-detailed tr {
+    border-bottom: 1px solid black;
+     width: 100%;
+
+}
+
+#nutritions-details, #health-details{
+    display:none;
+}
+
+.detail , #health-details {
+    font-family: 'titlesRegular', serif;
+    font-size: 20px;
+
+}
+
+#ingredients {
+    margin-left:7%;
+}
+
+#instructions {
+    margin-left:7%;
+}
+
+
+.mainDetails h2{
+    font-family: 'titlesBOLD', serif;
+    font-size:25px;
+}
+.mainDetails h4{
+    font-family: 'titlesRegular', serif;
+    font-size:17px;
+}
+
+#reviews {
+     position: absolute;
+    left: 70%;
+   top: 27%;
+
+}
+#write-review{
+    display: flex;
+
+}
+
+#reviewInput {
+    width: 400px;
+    height: 60px;
+    background-color: #e2ebdd;
+    border: none;
+    color: black;
+    padding: 2px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 20px;
+    font-family: 'titlesRegular', serif;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-right: 10px;
+
+}
+
+
+#reviewButton {
+    border-radius: 8px;
+    margin-top: 3px;
+    width: 20%;
+    height: 60px;
+    color: black;
+    border: 2px solid white;
+    font-family: 'titlesBOLD', serif;
+    font-size: 20px;
+    display: block;
+    background-color: #e2ebdd;
+    cursor: pointer;
+
+}
+
+
+#reviewButton:hover {
+    background-color: #d9ebce;
+}
+
+.review-card {
+    display:flex;
+}
+
+#reviews h2 {
+   font-family: 'titlesRegular', serif;
+   font-weight: bold;
+
+}
+.review img {
+    height: 10%;
+    width: auto;
+}
+.review{
+   width: 50%;
+   height:auto;
+   margin-bottom:10px;
+   border: 1px solid black;
+}
+
+.review > * {
+   margin: 10px;
+}
+
+.time{
+  text-align: right;
+
+}
+
+.resizable-container {
+    position: relative;
+    width: 600px;
+    height: 400px;
+    border: 1px solid #ccc;
+    overflow: auto;
+    resize: both;
+}
+
+.embedded-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}

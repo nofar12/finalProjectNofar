@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Discover recipes</title>
+    <link rel="stylesheet" href="../static/styles.css">
+    <link rel="stylesheet" href="discoverRecipes.css">
+    <link rel="stylesheet" href="filters.css">
+</head>
+<body>
+       <div class="profile-group" onclick="open_close_menu()">
+            <img src="profilePicture..." alt="Profile Picture" class="profilePicture">
+            <span class="username">Loading...</span>
+            <img src="../static/arrow.png" id="arrow-profile" alt="Arrow" class="arrowPicture">
+            <div id="profile-menu">
+                <div id="shortcuts-menu">
+                    <div onclick="favorites()">
+                        <img id="heart-menu" src="../../static/liked.png">
+                        <h3>Favorites</h3>
+                    </div>
+                    <div onclick="acc_settings()">
+                        <img id="settings-menu" src="../../static/settings.png">
+                        <h3>Account settings</h3>
+                    </div>
+                </div>
+            </div>
+       </div>
+       <img src="/static/logoSite.png" alt="logo" id="logo" onclick="homepage()">
+
+       <div class="search-group">
+            <div class="search-bar">
+                <input type="text" id="recipeInput" placeholder="Search a recipe">
+                <button onclick="searchRecipes()" class="searchingButton">Find a recipe</button>
+            </div>
+           <div class="filters-content">
+               <button onclick="showFiltersBar()" class ="filtersButton">Add filters</button>
+               <button onclick="saveCloseFilters()" class="saveCloseButton">Save and Close</button>
+               <div class="filters">
+                    <div class="calories">
+                        <h4>Calories</h4>
+                        <h5>From:</h5>
+                        <input type="text" id="from-calories">
+                        <h5>To:</h5>
+                        <input type="text" id="to-calories">
+                    </div>
+                    <div class="ingr-Num">
+                        <h4>Num of ingredients</h4>
+                        <h5>From:</h5>
+                        <input type="text" id="from-ingr">
+                        <h5>To:</h5>
+                        <input type="text" id="to-ingr">
+                    </div>
+                    <div class="total-time">
+                        <h4>Total cooking and <br>prep time (minutes)</h4>
+                        <h5>Up to:</h5>
+                        <input type="text" id="upto-total-time">
+                    </div>
+                    <div class="diet">
+                        <h4>Diet</h4>
+                    </div>
+                    <div class="allergies">
+                        <h4>Allergies</h4>
+                    </div>
+                    <div class="dietaryPreferences">
+                        <h4>Dietary preferences</h4>
+                    </div>
+                    <div class="cuisine-Type">
+                        <h4>Cuisine type</h4>
+                        <select name="cuisineType" id="cuisineType"></select>
+                    </div>
+                    <div class="meal-Type">
+                        <h4>Meal type</h4>
+                        <select name="mealType" id="mealType"></select>
+                    </div>
+                    <div class="dish-Type">
+                        <h4>Dish type</h4>
+                        <select name="dishType" id="dishType"></select>
+                    </div>
+                    <div class="excluded">
+                        <h4>Excluded ingredients</h4>
+                        <input type="text" id="ingredientsInput" placeholder="Enter ingredients">
+                        <button onclick="enterIngredient()" id ="enterIngredientBtn">Enter</button>
+                        <p id="instructionMsg">To delete an ingredient - click on it</p>
+                        <div id="ingredients"></div>
+                    </div>
+
+               </div>
+                    <div id="filtersActive">
+                       <h3>Filters: </h3>
+                       <p>Not active</p>
+                    </div>
+           </div>
+       </div>
+       <div class="recipe-feed">
+           <div class="header-discover">
+                <h2>Discover ideas</h2>
+                <button onclick="randomRecipes()" class="randomButton">Random ideas</button>
+                <div class="navigation">
+                    <button id="previous-results" onclick="loadRecipesByDirection('back')">&#8592; Back</button>
+                    <button id="next-results" onclick="loadRecipesByDirection('next')">Next &#8594;</button>
+                </div>
+           </div>
+           <table id="recipes-table"></table>
+           <h1 id="error-msg"></h1>
+       </div>
+       <script src="discoverRecipes.js"></script>
+       <script src="filters.js"></script>
+	   <script src="/static/styles.js"></script>
+
+</body>
+
+</html>
