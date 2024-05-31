@@ -24,10 +24,6 @@ class MainAction:
         email = unquote(form_data.getvalue('email'))
         password = unquote(form_data.getvalue('password'))
 
-        # create users and sessions table if not exists
-        #db_manager.create_table("users","id INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT NOT NULL UNIQUE, email TEXT NOT NULL UNIQUE, password TEXT NOT NULL, img_filename varchar(255) DEFAULT 'profilePicture.png', salt TEXT")
-        #db_manager.create_table("sessions","session_id TEXT PRIMARY KEY, user_id INTEGER,  creation_timestamp TIMESTAMP DEFAULT CURRENT_TIMESTAMP,  expiration_timestamp TIMESTAMP, FOREIGN KEY (user_id) REFERENCES users(id)")  # create sessions table if not exists
-
         message = ""
 
         # check lengths
