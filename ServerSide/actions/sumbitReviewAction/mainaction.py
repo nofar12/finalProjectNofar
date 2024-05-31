@@ -20,18 +20,6 @@ class MainAction:
         recipe_id = reviewObj.get("recipe_id")
 
 
-        # create reviews table if it doesn't exist
-        # db_manager.create_table("reviews", "reviewID INTEGER PRIMARY KEY AUTOINCREMENT, "
-        # " recipeID INTEGER NOT NULL , reviewContent TEXT,img_filename VARCHAR(255), userID INTEGER,time TIMESTAMP DEFAULT CURRENT_TIMESTAMP,"
-        #  " FOREIGN KEY (recipeID) REFERENCES usersContent (recipeID), FOREIGN KEY (userID) REFERENCES users (id)")
-
-        # create user UserInteractions table if it doesn't exist
-        # db_manager.create_table("UserInteractions", " interactionID INTEGER PRIMARY KEY AUTOINCREMENT,
-        # 	userID INTEGER,  recipeID TEXT NOT NULL, liked BOOLEAN DEFAULT FALSE, rating INTEGER,
-        # 	FOREIGN KEY (userID) REFERENCES users (id), FOREIGN KEY (recipeID) REFERENCES usersContent (recipeID),	UNIQUE(userID, recipeID)")
-
-
-
         #find the userID who sent the review
         session_id = HTTPReqHandler.get_cookieSession_id(HTTPReqHandler.headers)
         if session_id is not None:
