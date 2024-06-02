@@ -2,8 +2,6 @@ from http.server import BaseHTTPRequestHandler, HTTPServer
 import os
 import re
 import ssl
-# import socket
-# import API_interaction
 from ServerSide.controllers.BaseController import BaseHttpController
 from ServerSide.database_manager import db_manager_instance
 from ServerSide.globals import LISTEN_PORT, LISTEN_HOST
