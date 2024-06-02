@@ -54,8 +54,6 @@ class DatabaseManager:
     def check_username_exists(self, username):
         # Check if the username already exists in the database
         try:
-            #cursor = self.conn.cursor()
-            #cursor.execute("SELECT username FROM users WHERE username=?", (username,))
             return self.execute_query("SELECT id FROM users WHERE username=?", (username,)) is not None #boolean
         except sqlite3.Error as e:
             print("Error checking username:", e)
@@ -65,8 +63,6 @@ class DatabaseManager:
     def check_email_exists(self, email):
             # Check if the email already exists in the database
             try:
-                #cursor = self.conn.cursor()
-                #cursor.execute("SELECT email FROM users WHERE email=?", (email,))
                 return  self.execute_query("SELECT email FROM users WHERE email=?", (email,)) is not None #boolean
             except sqlite3.Error as e:
                 print("Error checking email:", e)
@@ -102,10 +98,6 @@ class DatabaseManager:
     def get_userID_bySessionID(self, session_id):
         # Get userID by session_id
         try:
-            # result = self.execute_query("SELECT user_id FROM sessions WHERE session_id=?", (session_id,))
-            # if not result:
-            #     return None
-            # return result[0]
             username = self.get_username_bySessionID(session_id)
             return self.get_user_id_byUsername(username)
         except sqlite3.Error as e:
@@ -130,7 +122,6 @@ class DatabaseManager:
         return userDic
 
     def get_user_detail_from_session(self, session_id):
-        #session_rcd = self.execute_query("SELECT user_id FROM sessions WHERE session_id=?", (session_id,))
         # Get the record of the
         session_rcd = self.get_userID_bySessionID(session_id)
         if not session_rcd:
@@ -179,26 +170,12 @@ class DatabaseManager:
     def load_reviews_byRecipeID(self,recipe_id):
         try:
             reviews = self.execute_query_all("SELECT * FROM reviews WHERE recipeId=?", (recipe_id,))
-            #cursor = self.conn.cursor()
-            #reviews = cursor.execute("SELECT * FROM reviews WHERE recipeId=?", (recipe_id,)).fetchall() #Fetches all rows
             if reviews: #return reviews if existed
                 return reviews
             return None
         except sqlite3.Error as e:
             print("Error getting reviews:", e)
             raise Exception("Error getting reviews")
-
-
-    # def get_username_by_userId(self, user_id):
-    #     try:
-    #         username = self.execute_query("SELECT username FROM users WHERE id = ?", (user_id,))
-    #         if username[0]:
-    #             return username[0]
-    #         return None
-    #     except sqlite3.Error as e:
-    #         print("Error getting reviews:", e)
-    #         raise Exception("Error getting reviews")
-    #         return None
 
     def like_or_dislike(self,user_id, recipe_id):
         #remove or add new like to users_likes
