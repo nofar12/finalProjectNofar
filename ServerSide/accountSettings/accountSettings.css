@@ -1,6 +1,6 @@
 
-#settings-headersL:not(h2) {
-    display:flex;
+#settings-headers:not(h2) {
+    text-align: center;
 
 }
 
@@ -48,6 +48,10 @@ button:hover {
 
 #upload_file{
     display: none;
+    margin: 0 auto;
+    text-align: center;
+    width: fit-content;
+    margin-bottom: 2%;
 }
 
 #change_pass-form{
