@@ -31,7 +31,7 @@ class MainAction:
              params = (recipe_id,user_input,user_rcd.get("id"))
              query = "INSERT INTO reviews (recipeID, reviewContent,userID) VALUES (?,?,?)"  # the ? is parameters placeholders
              db_manager.execute_query(query, params)
-             data ={"username":user_rcd.get("username"), "review":user_input,"time":datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S"), "profile_pic":user_rcd.get("profile_filename") }
+             data ={"username":user_rcd.get("username"), "review":user_input,"time":datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S"), "profile_pic":user_rcd.get("profile_filename") }
              HTTPReqHandler.send_response(200)
              HTTPReqHandler.send_header('Content-type', 'application/json')
              HTTPReqHandler.end_headers()
