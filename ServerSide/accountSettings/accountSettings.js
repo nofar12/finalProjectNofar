@@ -14,6 +14,10 @@ function deleteAcc(){
 
 function changeProfile(){
     upload_form = document.getElementById("upload_file");
+    if (document.getElementById("change_pass-form").style.display =="flex"){
+            document.getElementById("change_pass-form").style.display ="none"
+            changePass_form.style.display = "none"
+    }
     if (upload_form.style.display =="flex"){
         upload_form.style.display = "none"
     }
@@ -23,12 +27,18 @@ function changeProfile(){
 }
 
 function changePassword(){
-    changePass_form = document.getElementById("change_pass-form");
-    if (changePass_form.style.display =="flex"){
-        changePass_form.style.display = "none"
+    changePass_form = document.getElementById("change_pass-form")
+    if (document.getElementById("upload_file").style.display =="flex"){
+            document.getElementById("upload_file").style.display ="none"
+            changePass_form.style.display = "flex"
     }
     else{
-       changePass_form.style.display = "flex"
+         if (changePass_form.style.display =="flex"){
+            changePass_form.style.display = "none"
+        }
+        else{
+             changePass_form.style.display = "flex"
+        }
     }
 }
 
@@ -55,5 +65,5 @@ document.getElementById('change_pass-form').addEventListener("submit", function(
         } else {
             $("alert-box failure").fadeIn( 300 ).delay( 1500 ).fadeOut( 400 );
         }
-    });
-});
+    })
+})
