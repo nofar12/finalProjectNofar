@@ -173,9 +173,8 @@ h4{
 }
 
 .navigation {
-    flex-direction: row;
+    display:flex;
     justify-content: flex-end;
-    justify-content: space-between;
     position: relative;
     width: 70%;
 }
