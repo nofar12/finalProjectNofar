@@ -31,12 +31,12 @@
        <div id="settings-headers">
            <h2>Account settings</h2>
            <button onclick="changeProfile()">Change profile picture</button>
+           <button onclick="changePassword()">Change password</button>
            <form id="upload_file"  enctype = "multipart/form-data" action = "update_profile" method = "post">
               <p>Upload File: <input type ="file"  name ="filename"  accept=".jpg, .png, .jpeg, .gif, .bmp, .tif, .tiff|image/*"/></p>
               <p><input type = "submit" value = "Upload" /></p>
            </form>
 
-           <button onclick="changePassword()">Change password</button>
            <form id="change_pass-form" method="post">
                 <label for="password">New password:</label>
                 <input type="password" id="password" name="password" required>
@@ -48,16 +48,10 @@
             <div class="alert-box success">Password was changed successfully</div>
             <div class="alert-box failure">Failed to update with new password</div>
             <div class="alert-box warning">Warning Alert !!!</div>
-        </div>
-        </div>
-
-
+            </div>
            <button onclick="logOut()">Log out</button>
            <button onclick="deleteAcc()">Delete account</button>
-
-
-       </div>
-
+        </div>
 	<script src="/accountSettings/accountSettings.js"></script>
 	<script src="/static/styles.js"></script>
 
