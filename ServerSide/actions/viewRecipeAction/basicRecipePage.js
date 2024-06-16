@@ -70,27 +70,30 @@ function addReview() { //add comment\review
             headers: { "Content-Type": "application/json"},
             body: reviewDataJson
            })
-        .then(response => response.json())
-        .then( data => {
-               review_html ='<div class="review-card">' +
-               '<img src="' + data.profile_pic + '" alt="Profile Picture" class="profilePicture">' +
-                '<div class="review">'+
-                '<h3>' + data.username +' says:</h3>'+
-                ' <p>' + data.review  +'</p>'+
-                '<p class= "time">' +data.time+'</p></div></div>'
-               document.getElementById("reviews-cardsAll").innerHTML+= review_html
-               document.getElementById("reviewInput").value= ""
+        .then(response => {
+            if (response.status == 200) {
+                 response.json().then(data => {
+                   review_html ='<div class="review-card">' +
+                           '<img src="' + data.profile_pic + '" alt="Profile Picture" class="profilePicture">' +
+                            '<div class="review">'+
+                            '<h3>' + data.username +' says:</h3>'+
+                            ' <p>' + data.review  +'</p>'+
+                            '<p class= "time">' +data.time+'</p></div></div>'
+                           document.getElementById("reviews-cardsAll").innerHTML+= review_html
+                           document.getElementById("reviewInput").value= ""
 
+                    })
+            }
+            else if (response.status == 409) {
+                response.text().then(errorMessage => {
+                    alert(errorMessage) // Show the error message from the server
+                })
+            }
+             else {
+                alert("An error occurred. Please try again later.") // other server errors
+            }
         })
-
-
 }
 
 
-//document.addEventListener('DOMContentLoaded', function() {
-//    var iframe = document.getElementById('embedded-iframe');
-//    iframe.addEventListener('error', function() {
-//        console.error('Error loading iframe');
-//        iframe.style.display = 'none';
-//    });
-//});
+
