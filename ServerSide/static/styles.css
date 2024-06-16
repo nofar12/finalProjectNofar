@@ -44,12 +44,10 @@
 
 }
 
-
-
 .profilePicture{
     border-radius: 50%;
     width:3%;
-    height: 3%;
+    height: 50px;
     vertical-align: middle;
 }
 
@@ -58,8 +56,6 @@
   margin-left: 10px;
   vertical-align: middle;
 }
-
-
 
 #shortcuts-menu{
     display:none;
