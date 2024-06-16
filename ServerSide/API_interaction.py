@@ -13,7 +13,7 @@ class API_Interaction:
              # Send HTTP GET request to the URL and retrieve the response
              with urllib.request.urlopen(url) as response:
                  if response.getcode() == 200: # Check if the response status code is OK
-                    recipe_data = json.loads(response.read().decode())
+                    recipe_data = json.loads(response.read().decode()) # parse the response to JSON
                     return recipe_data
                  return None
 
