@@ -40,13 +40,13 @@
                    window.location.href = "/userRecipeSearch/discoverRecipes.html"
                 } else if (response.status === 409) {
                     response.text().then(errorMessage => {
-                        alert(errorMessage); // Show the error message from the server
-                    });
+                        alert(errorMessage) // Show the error message from the server
+                    })
                 } else {
-                    alert("An error occurred. Please try again later."); // Other server errors
+                    alert("An error occurred. Please try again later.") // Other server errors
                 }
-            });
-        });
+            })
+        })
     </script>
 </body>
 </html>
