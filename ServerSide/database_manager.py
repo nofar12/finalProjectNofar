@@ -200,5 +200,5 @@ class DatabaseManager:
             print("Error deleting user:", e)
             raise Exception("Error deleting user")
 
-
+# create an instance of DatabaseManager
 db_manager_instance: DatabaseManager = DatabaseManager('user_DB.db')
