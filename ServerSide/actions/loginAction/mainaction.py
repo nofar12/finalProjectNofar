@@ -21,7 +21,7 @@ class MainAction:
             environ={'REQUEST_METHOD': 'POST'}
         )
 
-        usernameOrEmail = unquote(form_data.getvalue('usernameOrEmail'))  # unquote() function decodes special characters.
+        usernameOrEmail = unquote(form_data.getvalue('usernameOrEmail'))  # unquote() function decodes special characters
         email = ''
         username = ''
 
@@ -57,14 +57,14 @@ class MainAction:
                 values = (session_id, db_manager.get_user_id_byUsername(username), expiration_time)
                 db_manager.execute_query(query, values)
 
-                cookie = cookies.SimpleCookie()
-                cookie['session_id'] = session_id
+                cookie = cookies.SimpleCookie() 
+                cookie['session_id'] = session_id # set 'session_id' cookie
                 cookie['session_id']['expires'] = expiration_time.strftime('%a, %d %b %Y %H:%M:%S GMT')  # browser format
                 cookie['session_id']['path'] = '/'  # means that the cookie is valid for the entire domain/website
 
                 HTTPReqHandler.send_response(302)  #  redirect
-                HTTPReqHandler.send_header('Location','/userRecipeSearch/discoverRecipes.html')  # Redirect to the discovery page
-                HTTPReqHandler.send_header('Set-Cookie',cookie['session_id'].OutputString())  # Include the cookie in the response
+                HTTPReqHandler.send_header('Location','/userRecipeSearch/discoverRecipes.html')  # redirect to the discovery page
+                HTTPReqHandler.send_header('Set-Cookie',cookie['session_id'].OutputString())  # include the cookie in the response
                 HTTPReqHandler.end_headers()
                 return
             else:  # incorrect password
@@ -73,7 +73,7 @@ class MainAction:
         else:  # user_data is none (Null)
             message = b"User does not exist."
 
-        HTTPReqHandler.send_response(409)  # Conflict status code
+        HTTPReqHandler.send_response(409)  # conflict status code
         HTTPReqHandler.send_header('Content-type', 'text/plain')
         HTTPReqHandler.end_headers()
         HTTPReqHandler.wfile.write(message)
