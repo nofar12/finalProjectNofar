@@ -63,7 +63,7 @@ class HTTPReqHandler(BaseHTTPRequestHandler):  # Requests Handler
 def run_server():
     server_address = ('', LISTEN_PORT)
     httpd = HTTPServer(server_address, HTTPReqHandler)
-    httpd.socket = ssl.wrap_socket(httpd.socket, certfile='./server.pem', server_side=True)
+    httpd.socket = ssl.wrap_socket(httpd.socket, certfile='../server.pem', server_side=True)
     print('Starting server... listen on ' + LISTEN_HOST + ":" + str(LISTEN_PORT))
     httpd.serve_forever()
 
