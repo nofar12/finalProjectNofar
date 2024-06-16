@@ -22,7 +22,7 @@
     <a href="/signUp/signUp.html">Sign up</a>
     <script>
         document.getElementById('login-form').addEventListener("submit", function(event) {
-            event.preventDefault();  // Prevent default form submission
+            event.preventDefault()  // Prevent default form submission
 
             // Get form data
             let formData = new FormData(document.getElementById('login-form')) //the formData object  with the form's current keys/values, and encode file input content
