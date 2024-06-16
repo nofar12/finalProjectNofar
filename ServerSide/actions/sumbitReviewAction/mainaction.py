@@ -25,13 +25,25 @@ class MainAction:
         if session_id is not None:
              print("BaseHttpController: found sessionId=" + session_id)
              user_rcd = db_manager.get_user_detail_from_session(session_id)
-
              print("UserID found:", user_rcd.get("id"))
+             if len(user_input.strip())==0:
+                 HTTPReqHandler.send_response(409)  # Conflict status code
+                 HTTPReqHandler.send_header('Content-type', 'text/plain')
+                 HTTPReqHandler.end_headers()
+                 HTTPReqHandler.wfile.write(b'Please enter a review.')
+                 return
+             if len(user_input)>60:
+                 HTTPReqHandler.send_response(409)  # Conflict status code
+                 HTTPReqHandler.send_header('Content-type', 'text/plain')
+                 HTTPReqHandler.end_headers()
+                 HTTPReqHandler.wfile.write(b'Please enter up to 60 characters.')
+                 return
+
              #add the review to the reviews database
              params = (recipe_id,user_input,user_rcd.get("id"))
              query = "INSERT INTO reviews (recipeID, reviewContent,userID) VALUES (?,?,?)"  # the ? is parameters placeholders
              db_manager.execute_query(query, params)
-             data ={"username":user_rcd.get("username"), "review":user_input,"time":datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S"), "profile_pic":user_rcd.get("profile_filename") }
+             data ={"username":user_rcd.get("username"), "review":user_input,"time": datetime.datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S"), "profile_pic":user_rcd.get("profile_filename") }
              HTTPReqHandler.send_response(200)
              HTTPReqHandler.send_header('Content-type', 'application/json')
              HTTPReqHandler.end_headers()
