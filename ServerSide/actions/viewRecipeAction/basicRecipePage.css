@@ -105,12 +105,6 @@
 .row h3 {
     font-weight: 200;
 }
-.profilePicture{
-    border-radius: 50%;
-    width:3%;
-    height: 3%;
-    vertical-align: middle;
-}
 
 .username{
   font-size: 20px;
@@ -225,6 +219,8 @@
 
 }
 
+
+
 #reviewInput {
     width: 400px;
     height: 60px;
@@ -272,12 +268,13 @@
    font-weight: bold;
 
 }
-.review img {
-    height: 10%;
-    width: auto;
+#reviews-cardsAll img{
+    width:50px;
+    margin-right: 1%;
+
 }
 .review{
-   width: 50%;
+   width: 80%;
    height:auto;
    margin-bottom:10px;
    border: 1px solid black;
