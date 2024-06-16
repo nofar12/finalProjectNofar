@@ -48,7 +48,7 @@ class MainAction:
             stored_password = user_data[3]
             stored_salt = user_data[5]
             input_password = unquote(form_data.getvalue('password')).encode('utf-8') #convert to bytes
-            formpass = bcrypt.hashpw(input_password, stored_salt)
+            formpass = bcrypt.hashpw(input_password, stored_salt) # hashing the inputed password with the stoeed salt
             if stored_password == formpass:  # correct password
 
                 query = "INSERT INTO sessions (session_id, user_id, expiration_timestamp) VALUES (?,?,?)"  # the ? is parameters placeholder
@@ -67,11 +67,11 @@ class MainAction:
                 HTTPReqHandler.send_header('Set-Cookie',cookie['session_id'].OutputString())  # Include the cookie in the response
                 HTTPReqHandler.end_headers()
                 return
-            else:  # inncorect password
+            else:  # incorrect password
                 message = b"Incorrect password. Try again."
 
         else:  # user_data is none (Null)
-            message = b"User is not existed."
+            message = b"User does not exist."
 
         HTTPReqHandler.send_response(409)  # Conflict status code
         HTTPReqHandler.send_header('Content-type', 'text/plain')
