@@ -25,9 +25,9 @@
             event.preventDefault();  // Prevent default form submission
 
             // Get form data
-            let formData = new FormData(document.getElementById('login-form')); //the formData object  with the form's current keys/values, and encode file input content
-            let usernameOrEmail = formData.get('usernameOrEmail');
-            let password = formData.get('password');
+            let formData = new FormData(document.getElementById('login-form')) //the formData object  with the form's current keys/values, and encode file input content
+            let usernameOrEmail = formData.get('usernameOrEmail')
+            let password = formData.get('password')
 
             // Send form data to the server using Fetch API
             fetch('/submit_form_logIn', {
