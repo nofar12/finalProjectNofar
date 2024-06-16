@@ -31,5 +31,5 @@ class MainAction:
             db_manager.execute_query("update users set profile_filename=? where id =?", ("/usersImages/" + fn,userId ) )
 
         HTTPReqHandler.send_response(302)  # redirect
-        HTTPReqHandler.send_header('Location', '/accountSettings/accountSettings.html')  # Redirect to the profile page
+        HTTPReqHandler.send_header('Location', '/accountSettings/accountSettings.html')  
         HTTPReqHandler.end_headers()
