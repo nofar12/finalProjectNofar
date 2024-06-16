@@ -1,0 +1,4 @@
+pip install bcrypt
+pip install beautifulsoup4
+pip install setuptools
+
