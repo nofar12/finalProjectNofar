@@ -10,6 +10,7 @@ class API_Interaction:
         url = API_URL+ '/' + id + '?type=public&app_id=' + APP_ID + '&app_key=' + API_KEY
         try:
              # fetching data from Edamam API
+             # Send HTTP GET request to the URL and retrieve the response
              with urllib.request.urlopen(url) as response:
                  if response.getcode() == 200: # Check if the response status code is OK
                     recipe_data = json.loads(response.read().decode())
