@@ -29,6 +29,9 @@ class MainAction:
         # check lengths
         if len(username)>20 or len(email)>20 or len(str(password))>20:
             message = b'Please enter up to 20 characters.'
+        if len(password) < 4:
+            message = b'Please enter longer password.'   
+            
         # check if username is valid
         if not HTTPReqHandler.is_username_valid(username) :
                 message = b'Username is not valid. Try again.'
